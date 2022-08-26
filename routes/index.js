@@ -37,13 +37,13 @@ const initWebRoutes = (app) => {
     router.get('/students/by-class', Department2Middleware, StudentController.ListStudentByClass);
     router.post('/students/update-class', Department3Middleware, StudentController.UpdateClassStudent);
     router.get('/students/:id', StudentMiddleware, StudentController.GetStudentById);
-    router.post('/students/update', StudentMiddleware, StudentController.UpdateStudent);
+    router.post('/students/update/:id', StudentMiddleware, StudentController.UpdateStudent);
     // router.delete('/students/delete', StudentController.DeleteStudent);
 
     router.post('/teachers/add', AdminMiddleware, TeacherController.AddTeacher);
     router.get('/teachers/list', AdminMiddleware, TeacherController.ListTeacher);
     router.get('/teachers/:id', TeacherMiddleware, TeacherController.GetTeacherById);
-    router.post('/teachers/update', TeacherMiddleware, TeacherController.UpdateTeacher);
+    router.post('/teachers/update/:id', TeacherMiddleware, TeacherController.UpdateTeacher);
 
     router.post('/subjects/add', Department3Middleware, SubjectController.AddSubject);
     router.get('/subjects/list', Department3Middleware, SubjectController.ListSubject);
